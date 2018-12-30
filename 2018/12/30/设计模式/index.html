@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>设计模式 | CoderQian&#39;s blogs</title>
+
+  
+  <meta name="author" content="qianliqing">
+  
+
+  
+  <meta name="description" content="CoderQian&#39;s blogs">
+  
+
+  
+  
+  <meta name="keywords" content="Java,设计模式">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="设计模式">
+
+  <meta property="og:site_name" content="CoderQian&#39;s blogs">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+  
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5005349780815724",
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?223eea22355699157e147870eb124b24";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <link rel="manifest" href="/manifest.json">
+  <link href="/favicon.ico" rel="icon">
+
+  <link rel="alternate" href="/atom.xml" title="CoderQian&#39;s blogs" type="application/atom+xml">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    
+
+    <header class="header-container" style="background-image: url('/images/blog-bg.jpg');">
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+          <button type="button" id="tglBtn" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">qianliqing</a>
+        </div>
+        <div id="bosenyblog-navbar">
+          <div class="navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav navbar-right">
+            
+              <li><a href="/">Home</a></li>
+            
+              <li><a href="/archives">Archives</a></li>
+            
+              <li><a href="/about">About</a></li>
+            
+              <li><a href="/tags">Tags</a></li>
+            
+            </ul>
+          </div>
+        </div>
+
+    </div>
+ </nav>
+ <div class="gotop-btn">
+
+ </div>
+</header>
+
+        
+          <div class="container ">
+          <div class="row">
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><span>设计模式</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/12/30/设计模式/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-12-30T10:02:41.000Z">
+          2018-12-30
+        </time>
+      </a>
+    </span>
+    <br>
+    
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+          <h3 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h3><p>设计模式（Design pattern）代表了最佳的实践，通常被有经验的面向对象的软件开发人员所采用。设计模式是软件开发人员在软件开发过程中面临的一般问题的解决方案。这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。</p>
+<a id="more"></a>
+<h3 id="设计模式的类型"><a href="#设计模式的类型" class="headerlink" title="设计模式的类型"></a>设计模式的类型</h3><p>根据设计模式的参考书 <a href="https://www.oreilly.com/library/view/design-patterns-elements/0201633612/" target="_blank" rel="noopener">Design Patterns - Elements of Reusable Object-Oriented Software</a>（中文译名：设计模式 - 可复用的面向对象软件元素） 中所提到的，总共有 23 种设计模式。这些模式可以分为三大类：创建型模式（Creational Patterns）、结构型模式（Structural Patterns）、行为型模式（Behavioral Patterns）。</p>
+<h3 id="面向对象设计的原则"><a href="#面向对象设计的原则" class="headerlink" title="面向对象设计的原则"></a>面向对象设计的原则</h3><ul>
+<li>开闭原则 (Open Close Principle)</li>
+<li>里氏代换原则 (Liskov Substitution Principle)</li>
+<li>依赖倒转原则 (Dependence Inversion Principle)</li>
+<li>接口隔离原则 (Interface Segregation Principle)</li>
+<li>单一职责原则 (Single Responsibility Principle)</li>
+</ul>
+<h3 id="4-模式分类"><a href="#4-模式分类" class="headerlink" title="4. 模式分类"></a>4. 模式分类</h3><h4 id="4-1-创建型模式"><a href="#4-1-创建型模式" class="headerlink" title="4.1 创建型模式"></a>4.1 创建型模式</h4><p>创建型模式对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符合单一职责原则。</p>
+<p>创建型模式在创建什么(What)，由谁创建(Who)，何时创建(When)等方面都为软件设计者提供了尽可能大的灵活性。创建型模式隐藏了类的实例的创建细节，通过隐藏对象如何被创建和组合在一起达到使整个系统独立的目的。</p>
+<p><a href="https://blog.csdn.net/weixin_36759405/article/details/84329850" target="_blank" rel="noopener">简单工厂模式 (Simple Factory Pattern)</a><br><a href="https://blog.csdn.net/weixin_36759405/article/details/84342389" target="_blank" rel="noopener">工厂方法模式 (Factory Method Pattern)</a><br><a href="https://blog.csdn.net/weixin_36759405/article/details/84455180" target="_blank" rel="noopener">抽象工厂模式 (Abstract Factory Pattern)</a><br><a href="https://blog.csdn.net/weixin_36759405/article/details/84787181" target="_blank" rel="noopener">建造者模式 (Builder Pattern)</a><br><a href="https://blog.csdn.net/weixin_36759405/article/details/84562208" target="_blank" rel="noopener">单例模式 (Singleton Pattern)</a><br><a href="https://blog.csdn.net/weixin_36759405/article/details/84673568" target="_blank" rel="noopener">原型模式 (Prototype Pattern)</a></p>
+<h4 id="4-2-结构型模式"><a href="#4-2-结构型模式" class="headerlink" title="4.2 结构型模式"></a>4.2 结构型模式</h4><p>结构型模式描述如何将类或者对象结合在一起形成更大的结构，就像搭积木，可以通过简单积木的组合形成复杂的、功能更为强大的结构。</p>
+<p>结构型模式可以分为类结构型模式和对象结构型模式：类结构型模式关心类的组合，由多个类可以组合成一个更大的系统，在类结构型模式中一般只存在继承关系和实现关系；对象结构型模式关心类与对象的组合，通过关联关系使得在一 个类中定义另一个类的实例对象，然后通过该对象调用其方法。 根据“合成复用原则”，在系统中尽量使用关联关系来替代继承关系，因此大部分结构型模式都是对象结构型模式。</p>
+<p><a href="https://blog.csdn.net/weixin_36759405/article/details/84953783" target="_blank" rel="noopener">适配器模式 (Adapter Pattern)</a><br><a href="https://blog.csdn.net/weixin_36759405/article/details/84965691" target="_blank" rel="noopener">桥接模式 (Bridge Pattern)</a><br><a href="https://blog.csdn.net/weixin_36759405/article/details/85016456" target="_blank" rel="noopener">装饰模式 (Decorator Pattern)</a><br><a href="">过滤器模式 (Filter Pattern)</a><br><a href="https://blog.csdn.net/weixin_36759405/article/details/85204708" target="_blank" rel="noopener">外观模式 (Facade Pattern)</a><br><a href="">享元模式 (Flyweight Pattern)</a><br><a href="">代理模式 (Proxy Pattern)</a><br><a href="https://blog.csdn.net/weixin_36759405/article/details/85012064" target="_blank" rel="noopener">组合模式 (Composite Pattern)</a></p>
+<h4 id="4-3-行为型模式"><a href="#4-3-行为型模式" class="headerlink" title="4.3 行为型模式"></a>4.3 行为型模式</h4><p>行为型模式是对在不同的对象之间划分责任和算法的抽象化。</p>
+<p>行为型模式不仅仅关注类和对象的结构，而且重点关注它们之间的相互作用。</p>
+<p>通过行为型模式，可以更加清晰地划分类与对象的职责，并研究系统在运行时实例对象之间的交互。在系统运行时，对象并不是孤立的，它们可以通过相互通信与协作完成某些复杂功能，一个对象在运行时也将影响到其他对象的运行。</p>
+<p>行为型模式分为类行为型模式和对象行为型模式两种：类行为型模式使用继承关系在几个类之间分配行为，类行为型模式主要通过多态等方式来分配父类与子类的职责；对象行为型模式则使用对象的聚合关联关系来分配行为，对象行为型模式主要是通过对象关联等方式来分配两个或多个类的职责。根据“合成复用原则”，系统中要尽量使用关联关系来取代继承关系，因此大部分行为型设计模式都属于对象行为型设计模式。</p>
+<p><a href="">命令模式 (Command Pattern)</a><br><a href="">中介者模式 (Mediator Pattern)</a><br><a href="">观察者模式 (Observer Pattern)</a><br><a href="">状态模式 (State Pattern)</a><br><a href="">策略模式 (Strategy Pattern)</a><br><a href="">责任链模式 (Chain of Responsibility Pattern)</a><br><a href="">解释器模式 (Interpreter Pattern)</a><br><a href="">迭代器模式 (Iterator Pattern)</a><br><a href="">备忘录模式 (Memento Pattern)</a></p>
+<h3 id="5-GitHub-地址"><a href="#5-GitHub-地址" class="headerlink" title="5. GitHub 地址"></a>5. GitHub 地址</h3><p><a href="https://github.com/coderqianlq/design-patterns.git">design-patterns</a></p>
+
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/设计模式/">设计模式</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Java/">Java</a><a href="/tags/设计模式/">设计模式</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    
+  
+</article>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是设计模式"><span class="toc-number">1.</span> <span class="toc-text">什么是设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式的类型"><span class="toc-number">2.</span> <span class="toc-text">设计模式的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象设计的原则"><span class="toc-number">3.</span> <span class="toc-text">面向对象设计的原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-模式分类"><span class="toc-number">4.</span> <span class="toc-text">4. 模式分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-创建型模式"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 创建型模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-结构型模式"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 结构型模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-行为型模式"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 行为型模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-GitHub-地址"><span class="toc-number">5.</span> <span class="toc-text">5. GitHub 地址</span></a></li></ol>
+</div>
+
+
+  
+
+	<!-- async load  -->
+	<script>
+			function async(u, c) {
+				var d = document, t = 'script',
+						o = d.createElement(t),
+						s = d.getElementsByTagName(t)[0];
+				o.src = u;
+				if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+				s.parentNode.insertBefore(o, s);
+			}
+	</script>
+	<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+	<script>
+			async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+					anchors.options = {
+						visible: 'hover',
+						placement: 'left',
+						// icon: '#'
+					};
+					anchors.add().remove('.article-title').remove('.subheading').remove('.sidebar-container h5');
+			})
+	</script>
+	<style>
+			/* place left on bigger screen */
+			@media all and (min-width: 800px) {
+					.anchorjs-link{
+							position: absolute;
+							left: -0.75em;
+							font-size: 1.1em;
+							margin-top : -0.1em;
+					}
+			}
+	</style>
+
+
+
+
+<!-- UY BEGIN -->
+	<div id="gitment-container"></div>
+	<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+	<script src="https://jjeejj.github.io/js/gitment.js"></script>
+	<script src="/js/web-pinyin.js"></script>
+	<script>
+		function toUnicode(s){ 
+			return s.replace(/([\u4E00-\u9FA5]|[\uFE30-\uFFA0])/g,function(){
+			return "\\u" + RegExp["$1"].charCodeAt(0).toString(16);
+			});
+		}
+		var title = '设计模式'
+		var github_id = 'coderqianlq'
+		var client_id = '9ad56edb8779de4ffcf1'
+		var client_secret = '3d131ef73ef3d7e571cb7fd3f30ab8d245bc4b03'
+		var repo = 'coderqianlq.github.io'
+		var gitment = new Gitment({
+		// id: '页面 ID', // 可选。默认为 location.href
+		// id:"11" ,
+		id: title,
+		title: title,
+		owner: github_id,//'你的 github id',
+		repo: repo,//'存储评论的 repo',
+		oauth: {
+			client_id: client_id,//'你的 client ID',
+			client_secret: client_secret,//'你的 client secret',
+		},
+		})
+		gitment.render('gitment-container')
+	</script>
+<!-- UY END -->
+
+
+
+
+            </main>
+          </div>
+        </div>
+       
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://github.com/coderqianlq" target="_blank">CoderQian</a> and
+    Theme by <a href="https://github.com/BosenY/Lap" target="_blank">Lap</a>
+    <br><span id="busuanzi_container_site_uv"> 
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+    <br>
+    
+      
+        &copy; 2018 qianliqing
+      
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-92842840-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+  </div>
+
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://unpkg.com/draw-something/dist/draw.min.js"></script>
+  <script>
+    let maxNum = Number.parseInt('15')
+    let iconText = '💰'
+    let color = 'yellow'
+    new Draw({maxNum, iconText, color})
+  </script>
+
+<script src="/js/index.js"></script>
+<script src="/js/search.js"></script>
+
+</body>
+</html>
