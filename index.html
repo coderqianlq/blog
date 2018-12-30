@@ -114,7 +114,77 @@ var _hmt = _hmt || [];
 
   
     
-    <h3 class="article-title"><a href="/2018/12/30/Java设计模式（一）：简单工厂模式/"><span>Java设计模式（一）：简单工厂模式</span></a></h3>
+    <h3 class="article-title"><a href="/2018/12/30/Java设计模式（二）：工厂方法模式/"><span>Java 设计模式（二）：工厂方法模式</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/12/30/Java设计模式（二）：工厂方法模式/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-12-30T10:18:57.000Z">
+          2018-12-30
+        </time>
+      </a>
+    </span>
+    <br>
+    
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+         
+        <p>参考链接：<a href="https://gof.quanke.name/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F-Factory%20Method%20Pattern.html" target="_blank" rel="noopener">工厂方法模式-Factory Method Pattern</a></p>
+<p>在介绍<a href="https://blog.csdn.net/weixin_36759405/article/details/84329850" target="_blank" rel="noopener">简单工厂模式</a>时提到简单工厂模式存在一个很严重的问题，就是当系统中需要引入新产品时，如果静态工厂方法是通过传入参数的不同来创建不同的产品，这必定要修改工厂类的源代码，将违背“开闭原则”，如何实现增加新产品而不影响已有代码？工厂方法模式应运而生，本文将介绍第二种工厂模式——工厂方法模式。</p>
+<h3 id="1-模式概述"><a href="#1-模式概述" class="headerlink" title="1. 模式概述"></a>1. 模式概述</h3><p>定义：定义一个用于创建对象的接口，让子类决定将哪一个类实例化。工厂方法模式让一个类的实例化延迟到其子类。</p>
+      
+    </div>
+    
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/设计模式/">设计模式</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Java/">Java</a><a href="/tags/设计模式/">设计模式</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+  
+    
+    <h3 class="article-read"><a href="/2018/12/30/Java设计模式（二）：工厂方法模式/"><span>more</span></a></h3>
+    
+  
+</article>
+
+
+
+
+
+  <article class="article-container ">
+
+  
+    
+    <h3 class="article-title"><a href="/2018/12/30/Java设计模式（一）：简单工厂模式/"><span>Java 设计模式（一）：简单工厂模式</span></a></h3>
     
   
 
@@ -135,44 +205,9 @@ var _hmt = _hmt || [];
 
   <div class="article-content">
     <div class="entry">
-      
-          <p>参考链接：<a href="https://gof.quanke.name/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-Simple%20Factory%20Pattern.html" target="_blank" rel="noopener">简单工厂模式-Simple Factory Pattern</a></p>
+         
+        <p>参考链接：<a href="https://gof.quanke.name/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-Simple%20Factory%20Pattern.html" target="_blank" rel="noopener">简单工厂模式-Simple Factory Pattern</a></p>
 <h3 id="1-模式概述"><a href="#1-模式概述" class="headerlink" title="1. 模式概述"></a>1. 模式概述</h3><p>定义：定义一个工厂类，它可以根据参数的不同返回不同类的实例，被创建的实例通常都具有共同的父类。因为在简单工厂模式中用于创建实例的方法是静态方法，因此简单工厂模式又被称为静态工厂方法模式。</p>
-<p>简单工厂模式并不属于GoF 23个经典设计模式，但通常将它作为学习其他工厂模式的基础，它的设计思想很简单，其基本流程如下：首先将需要创建的各种不同对象（例如各种不同的Shape对象）的相关代码封装到不同的类中，这些类称为具体产品类，而将它们公共的代码进行抽象和提取后封装在一个抽象产品类中，每一个具体产品类都是抽象产品类的子类；然后提供一个工厂类用于创建各种产品，在工厂类中提供一个创建产品的工厂方法，该方法可以根据所传入的参数不同创建不同的具体产品对象；客户端只需调用工厂类的工厂方法并传入相应的参数即可得到一个产品对象。</p>
-<p>简单工厂模式结构比较简单，其核心是工厂类的设计，其结构如图所示：<br><img src="https://img-blog.csdnimg.cn/20181122100109413.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNjc1OTQwNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>在简单工厂模式中包含如下几个角色：</p>
-<ul>
-<li>Factory（工厂类）：负责实现创建所有产品实例的内部逻辑，在工厂类中提供静态的工厂方法，返回抽象产品。</li>
-<li>Product（抽象产品）：所有具体产品的父类，封装各种产品对象的共有方法。</li>
-<li>ConcreteProduct（具体产品类）：工厂类的创建目标。</li>
-</ul>
-<h3 id="2-模式实现"><a href="#2-模式实现" class="headerlink" title="2. 模式实现"></a>2. 模式实现</h3><p>在简单工厂模式中，客户端通过工厂类来创建一个产品类的实例，而无须直接使用new关键字来创建对象。</p>
-<p>在使用简单工厂模式时，首先需要对产品类进行重构，根据实际情况设计一个产品层次结构，将所有产品类公共的代码移至抽象产品类，并在抽象产品类中声明一些抽象方法，以供不同的具体产品类来实现，典型的抽象产品类代码如下所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 公共方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>具体产品类继承抽象产品类并实现抽象方法，不同的具体产品类可以提供不同的实现，典型的具体产品类代码如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">extends</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Inside Circle::draw() method."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> <span class="keyword">extends</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Inside Rectangle::draw() method."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Inside Square::draw() method."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>简单工厂模式的核心工厂类负责创建产品，提供一个静态工厂方法给客户端使用，典型的工厂类代码如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShapeFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Shape <span class="title">getShape</span><span class="params">(String shapeType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (shapeType == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (shapeType.equalsIgnoreCase(<span class="string">"CIRCLE"</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Circle();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (shapeType.equalsIgnoreCase(<span class="string">"RECTANGLE"</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Rectangle();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (shapeType.equalsIgnoreCase(<span class="string">"SQUARE"</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Square();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在客户端代码中，我们通过传入不同的参数给工厂方法来创建对应的产品，典型的代码如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Shape rectangle = ShapeFactory.getShape(<span class="string">"Rectangle"</span>);</span><br><span class="line">        rectangle.draw();</span><br><span class="line"></span><br><span class="line">        Shape circle = ShapeFactory.getShape(<span class="string">"Circle"</span>);</span><br><span class="line">        circle.draw();</span><br><span class="line"></span><br><span class="line">        Shape square = ShapeFactory.getShape(<span class="string">"Square"</span>);</span><br><span class="line">        square.draw();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-方案改进"><a href="#3-方案改进" class="headerlink" title="3. 方案改进"></a>3. 方案改进</h3><p>当我们更换一个Shape对象都需要修改客户端代码中静态工厂方法的参数，客户端代码将要重新编译，这对于客户端而言，违反了“开闭原则”，有没有一种方法能够在不修改客户端代码的前提下更换具体产品对象呢？</p>
-<p>我们可以将静态工厂方法的参数存储在XML或properties格式的配置文件中，如下config.xml所示：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">config</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">chartType</span>&gt;</span>square<span class="tag">&lt;/<span class="name">chartType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">config</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>在通过一个工具类XMLUtil来读取配置文件中的字符串参数，XMLUtil类的代码如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XMLUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getChartType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 创建文档对象</span></span><br><span class="line">            DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();</span><br><span class="line">            DocumentBuilder builder = dFactory.newDocumentBuilder();</span><br><span class="line">            Document doc;</span><br><span class="line">            <span class="comment">// config.xml的路径</span></span><br><span class="line">            doc = builder.parse(<span class="keyword">new</span> File(<span class="string">"config.xml"</span>));</span><br><span class="line">            <span class="comment">// 获取包含图表类型的文本节点</span></span><br><span class="line">            NodeList nl = doc.getElementsByTagName(<span class="string">"shapeType"</span>);</span><br><span class="line">            Node classNode = nl.item(<span class="number">0</span>).getFirstChild();</span><br><span class="line">            String shapeType = classNode.getNodeValue().trim();</span><br><span class="line">            <span class="keyword">return</span> shapeType;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>客户端通过读取配置文件中的shapeType创建对应的产品，客户端修改代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String shapeType = XMLUtil.getChartType();</span><br><span class="line">        Shape shape =  ShapeFactory.getShape(shapeType);</span><br><span class="line">        shape.draw();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>优化之后，如果需要更换具体图表对象，只需修改配置文件config.xml，无须修改任何源代码，符合“开闭原则”。</p>
-<p>还有另外一种情况，当系统中需要引入新产品时，比如引入新产品Triangle，由于静态工厂方法通过所传入参数的不同来创建不同的产品，那么势必要在工厂类中新增一个if…else判断来返回Triangle实例，违背了“开闭原则”。</p>
-<p>在工厂类中新增if…else判断的代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShapeFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Shape <span class="title">getShape</span><span class="params">(String shapeType)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (shapeType == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (shapeType.equalsIgnoreCase(<span class="string">"CIRCLE"</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Circle();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (shapeType.equalsIgnoreCase(<span class="string">"RECTANGLE"</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Rectangle();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (shapeType.equalsIgnoreCase(<span class="string">"SQUARE"</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Square();</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (shapeType.equalsIgnoreCase(<span class="string">"TRIANGLE"</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> Triangle();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>一旦产品类型较多时，工厂类会变得不易维护。</p>
-<p>我们可以通过反射机制解加增加新产品时需要改动静态工厂方法的缺点，修改静态工厂方法代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">getClass</span><span class="params">(Class&lt;? extends T&gt; clazz)</span> </span>&#123;</span><br><span class="line">    T obj = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        obj = (T) Class.forName(clazz.getName()).newInstance();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InstantiationException | IllegalAccessException | ClassNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>对应的客户端通过传入具体的产品类创建不同的产品，客户端代码修改如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String shape = ShapeFactory.getClass(Circle.class);</span><br><span class="line">        shape.draw();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>反射机制可以结合配置文件来更换具体的产品对象，而不需要改动客户端代码。</p>
-<h3 id="4-模式总结"><a href="#4-模式总结" class="headerlink" title="4. 模式总结"></a>4. 模式总结</h3><p>简单工厂模式提供专门的工厂类用于创建对象，将对象的创建和对象的使用分离开。</p>
-<p>1.主要优点<br>(1) 工厂类包含必要的判断逻辑，可以决定在什么时候创建哪一个产品类的实例，客户端可以免除直接创建产品对象的职责，而仅仅“消费”产品，简单工厂模式实现了对象创建和使用的分离。<br>(2) 客户端无须知道所创建的具体产品类的类名，只需要知道具体产品类所对应的参数即可，对于一些复杂的类名，通过简单工厂模式可以在一定程度减少使用者的记忆量。<br>(3) 通过引入配置文件，可以在不修改任何客户端代码的情况下更换和增加新的具体产品类，在一定程度上提高了系统的灵活性。</p>
-<p>2.主要缺点<br>(1) 由于工厂类集中了所有产品的创建逻辑，如果工厂类不能工作，整个系统都要受到影响。<br>(2) 当系统中需要引入新产品时，由于静态工厂方法通过所传入参数的不同来创建不同的产品，这必定要修改工厂类的源代码（反射方式除外）。<br>(3) 在产品类型较多时，有可能造成工厂逻辑过于复杂，不利于系统的扩展和维护。</p>
-<p>3.适用场景<br>(1) 工厂类负责创建的对象比较少时，不会造成工厂方法中的业务逻辑太过复杂，这个时候可以考虑使用简单工厂。<br>(2) 客户端对于如何创建对象并不关心。</p>
-
       
     </div>
     
@@ -600,7 +635,7 @@ inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
             
                 <a href="/categories/编程语言/" title="编程语言" rel="3">编程语言</a>
             
-                <a href="/categories/设计模式/" title="设计模式" rel="2">设计模式</a>
+                <a href="/categories/设计模式/" title="设计模式" rel="3">设计模式</a>
             
     </div>
 
