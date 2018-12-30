@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>CoderQian&#39;s blogs</title>
+  <title>Java设计模式（一）：简单工厂模式 | CoderQian&#39;s blogs</title>
 
   
   <meta name="author" content="qianliqing">
@@ -14,12 +14,15 @@
   
 
   
+  
+  <meta name="keywords" content="Java,设计模式">
+  
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="Java设计模式（一）：简单工厂模式">
 
   <meta property="og:site_name" content="CoderQian&#39;s blogs">
 
@@ -103,18 +106,16 @@ var _hmt = _hmt || [];
 </header>
 
         
-        <div class="container ">
+          <div class="container ">
           <div class="row">
-            <main class="site-main posts-loop    col-lg-8 col-lg-offset-1
-                    col-md-8 col-md-offset-1
-                    col-sm-12
-                    col-xs-12">
-            
-  <article class="article-container ">
+            <main class="site-main posts-loop col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container" style="position: inherit;">
+            <article class="article-container ">
 
   
     
-    <h3 class="article-title"><a href="/2018/12/30/Java设计模式（一）：简单工厂模式/"><span>Java设计模式（一）：简单工厂模式</span></a></h3>
+    <h3 class="article-title"><span>Java设计模式（一）：简单工厂模式</span></h3>
     
   
 
@@ -127,6 +128,10 @@ var _hmt = _hmt || [];
       </a>
     </span>
     <br>
+    
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
     
   </div>
 
@@ -205,430 +210,94 @@ var _hmt = _hmt || [];
   </div>
   
     
-    <h3 class="article-read"><a href="/2018/12/30/Java设计模式（一）：简单工厂模式/"><span>more</span></a></h3>
     
   
 </article>
-
-
-
-
-
-  <article class="article-container ">
-
-  
-    
-    <h3 class="article-title"><a href="/2018/12/30/设计模式/"><span>设计模式</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/12/30/设计模式/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-12-30T10:02:41.000Z">
-          2018-12-30
-        </time>
-      </a>
-    </span>
-    <br>
-    
-  </div>
+   
+    <div id="toc" class="toc-article ">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-模式概述"><span class="toc-number">1.</span> <span class="toc-text">1. 模式概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-模式实现"><span class="toc-number">2.</span> <span class="toc-text">2. 模式实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-方案改进"><span class="toc-number">3.</span> <span class="toc-text">3. 方案改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-模式总结"><span class="toc-number">4.</span> <span class="toc-text">4. 模式总结</span></a></li></ol>
+</div>
 
 
   
 
-  <div class="article-content">
-    <div class="entry">
-         
-        <h3 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h3><p>设计模式（Design pattern）代表了最佳的实践，通常被有经验的面向对象的软件开发人员所采用。设计模式是软件开发人员在软件开发过程中面临的一般问题的解决方案。这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。</p>
-      
-    </div>
-    
-  </div>
+	<!-- async load  -->
+	<script>
+			function async(u, c) {
+				var d = document, t = 'script',
+						o = d.createElement(t),
+						s = d.getElementsByTagName(t)[0];
+				o.src = u;
+				if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+				s.parentNode.insertBefore(o, s);
+			}
+	</script>
+	<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+	<script>
+			async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+					anchors.options = {
+						visible: 'hover',
+						placement: 'left',
+						// icon: '#'
+					};
+					anchors.add().remove('.article-title').remove('.subheading').remove('.sidebar-container h5');
+			})
+	</script>
+	<style>
+			/* place left on bigger screen */
+			@media all and (min-width: 800px) {
+					.anchorjs-link{
+							position: absolute;
+							left: -0.75em;
+							font-size: 1.1em;
+							margin-top : -0.1em;
+					}
+			}
+	</style>
+
+
+
+
+<!-- UY BEGIN -->
+	<div id="gitment-container"></div>
+	<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+	<script src="https://jjeejj.github.io/js/gitment.js"></script>
+	<script src="/js/web-pinyin.js"></script>
+	<script>
+		function toUnicode(s){ 
+			return s.replace(/([\u4E00-\u9FA5]|[\uFE30-\uFFA0])/g,function(){
+			return "\\u" + RegExp["$1"].charCodeAt(0).toString(16);
+			});
+		}
+		var title = 'Java设计模式（一）：简单工厂模式'
+		var github_id = 'coderqianlq'
+		var client_id = '9ad56edb8779de4ffcf1'
+		var client_secret = '3d131ef73ef3d7e571cb7fd3f30ab8d245bc4b03'
+		var repo = 'coderqianlq.github.io'
+		var gitment = new Gitment({
+		// id: '页面 ID', // 可选。默认为 location.href
+		// id:"11" ,
+		id: title,
+		title: title,
+		owner: github_id,//'你的 github id',
+		repo: repo,//'存储评论的 repo',
+		oauth: {
+			client_id: client_id,//'你的 client ID',
+			client_secret: client_secret,//'你的 client secret',
+		},
+		})
+		gitment.render('gitment-container')
+	</script>
+<!-- UY END -->
 
-  <div class="article-footer">
-    <div class="article-meta pull-left">
 
-    
-      
 
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/设计模式/">设计模式</a>
-    </span>
-    
 
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Java/">Java</a><a href="/tags/设计模式/">设计模式</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-  
-    
-    <h3 class="article-read"><a href="/2018/12/30/设计模式/"><span>more</span></a></h3>
-    
-  
-</article>
-
-
-
-
-
-  <article class="article-container ">
-
-  
-    
-    <h3 class="article-title"><a href="/2018/11/14/ArrayList循环遍历中删除元素问题二/"><span>ArrayList 循环遍历中删除元素问题二</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/11/14/ArrayList循环遍历中删除元素问题二/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-11-14T08:11:18.000Z">
-          2018-11-14
-        </time>
-      </a>
-    </span>
-    <br>
-    
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-         
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>问题一可以看我之前写的博客 <a href="https://blog.csdn.net/weixin_36759405/article/details/82767430" target="_blank" rel="noopener">List 循环遍历中删除元素问题一</a>。</p>
-<h3 id="问题讲解"><a href="#问题讲解" class="headerlink" title="问题讲解"></a>问题讲解</h3><p>问题二主要讲的是博主在今天的开发中遇到的一个问题。先来看下是什么问题让博主继上次问题后又写了问题二。</p>
-      
-    </div>
-    
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/编程语言/">编程语言</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Java/">Java</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-  
-    
-    <h3 class="article-read"><a href="/2018/11/14/ArrayList循环遍历中删除元素问题二/"><span>more</span></a></h3>
-    
-  
-</article>
-
-
-
-
-
-  <article class="article-container ">
-
-  
-    
-    <h3 class="article-title"><a href="/2018/11/07/ArrayList循环遍历中删除元素问题一/"><span>ArrayList 循环遍历中删除元素问题一</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/11/07/ArrayList循环遍历中删除元素问题一/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-11-07T05:40:29.000Z">
-          2018-11-07
-        </time>
-      </a>
-    </span>
-    <br>
-    
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-         
-        <h3 id="问题抛出"><a href="#问题抛出" class="headerlink" title="问题抛出"></a>问题抛出</h3><p>一个ArrayList在循环过程中删除，会不会出问题，为什么？接下来给大家详细解释一下在这个过程中会出现的问题和原因及解决方法。</p>
-<h3 id="问题讲解"><a href="#问题讲解" class="headerlink" title="问题讲解"></a>问题讲解</h3><p>ArrayList中的remove方法（注意ArrayList中的remove有两个同名方法，只是输入参数不同，这里看的是输入参数是Object的remove方法）是怎么实现的：</p>
-      
-    </div>
-    
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/编程语言/">编程语言</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Java/">Java</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-  
-    
-    <h3 class="article-read"><a href="/2018/11/07/ArrayList循环遍历中删除元素问题一/"><span>more</span></a></h3>
-    
-  
-</article>
-
-
-
-
-
-  <article class="article-container ">
-
-  
-    
-    <h3 class="article-title"><a href="/2018/11/05/传值和传引用的区别/"><span>Java 传值和传引用的区别</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/11/05/传值和传引用的区别/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-11-05T03:53:36.000Z">
-          2018-11-05
-        </time>
-      </a>
-    </span>
-    <br>
-    
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-         
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>首先对传值和传引用要有个基本的概念</p>
-<ul>
-<li>传值：传递的是值的副本。方法中对副本的修改，不会影响到调用方。</li>
-<li>传引用：传递的是引用的副本，共用一个内存，会影响到调用方。此时，形参和实参指向同一个内存地址。对引用副本本身（对象地址）的修改，如设置为null，重新指向其他对象，不会影响到调用方。</li>
-</ul>
-      
-    </div>
-    
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/编程语言/">编程语言</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Java/">Java</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-  
-    
-    <h3 class="article-read"><a href="/2018/11/05/传值和传引用的区别/"><span>more</span></a></h3>
-    
-  
-</article>
-
-
-
-
-
-  <article class="article-container ">
-
-  
-    
-    <h3 class="article-title"><a href="/2018/11/05/hello-world/"><span>Hello World</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/11/05/hello-world/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-11-05T01:20:42.379Z">
-          2018-11-05
-        </time>
-      </a>
-    </span>
-    <br>
-    
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-         
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-      
-    </div>
-    
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/其他/">其他</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Hexo教程/">Hexo教程</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-  
-    
-    <h3 class="article-read"><a href="/2018/11/05/hello-world/"><span>more</span></a></h3>
-    
-  
-</article>
-
-
-
-
-
-
-<nav class="pagination">
-  
-  
-</nav>
             </main>
-            <div class="sidebar
-                    col-lg-3 col-lg-offset-0
-                    col-md-3 col-md-offset-0
-                    col-sm-12
-                    col-xs-12
-                    sidebar-container
-                ">
-
-                <div class="sidebar-container">
-
-
-
-<div class="search-container">
-<form class="site-search-form">
-    <span class="glyphicon glyphicon-search"></span><input type="text" id="local-search-input" class="st-search-input" placeholder="Search...">
-</form>
-<div id="local-search-result" class="local-search-result-cls"></div>
-</div>
-<script type="text/javascript" id="local.search.active">
-var inputArea       = document.querySelector("#local-search-input");
-inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
-inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
-</script>
-
-
-
-
-    <div class="categories-container" style="margin-top:40px;">
-        <p>归档:</p>
-            
-                <a href="/categories/其他/" title="其他" rel="1">其他</a>
-            
-                <a href="/categories/编程语言/" title="编程语言" rel="3">编程语言</a>
-            
-                <a href="/categories/设计模式/" title="设计模式" rel="2">设计模式</a>
-            
-    </div>
-
-
-
-
-    <div class="social-container" style="margin-top:40px;">
-        <p>Links:</p>
-            
-                
-                    <li class="social-item"><i class="fa fa-fw fa-github"></i><a href="https://github.com/coderqianlq">GitHub</a></li>
-                
-            
-                
-                    <li class="social-item"><i class="fa fa-fw fa-weibo"></i><a href="https://weibo.com/u/5728338019">微博</a></li>
-                
-            
-                
-                    <li class="social-item"><i class=" fa fa-fw zhihu-icon"></i><a href="https://www.zhihu.com/people/qian-li-qing-3/activities">知乎</a></li>
-                
-            
-    </div>
-
-</div>
-            </div>
           </div>
         </div>
-        
+       
     <footer class="site-footer">
   <p class="site-info">
     Proudly powered by <a href="https://github.com/coderqianlq" target="_blank">CoderQian</a> and
