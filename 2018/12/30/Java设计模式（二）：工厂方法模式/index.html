@@ -145,7 +145,8 @@ var _hmt = _hmt || [];
 <p>在介绍<a href="https://blog.csdn.net/weixin_36759405/article/details/84329850" target="_blank" rel="noopener">简单工厂模式</a>时提到简单工厂模式存在一个很严重的问题，就是当系统中需要引入新产品时，如果静态工厂方法是通过传入参数的不同来创建不同的产品，这必定要修改工厂类的源代码，将违背“开闭原则”，如何实现增加新产品而不影响已有代码？工厂方法模式应运而生，本文将介绍第二种工厂模式——工厂方法模式。</p>
 <h3 id="1-模式概述"><a href="#1-模式概述" class="headerlink" title="1. 模式概述"></a>1. 模式概述</h3><p>定义：定义一个用于创建对象的接口，让子类决定将哪一个类实例化。工厂方法模式让一个类的实例化延迟到其子类。</p>
 <a id="more"></a>
-<p>工厂方法模式提供一个抽象工厂接口来声明抽象工厂方法，而由其子类来具体实现工厂方法，创建具体的产品对象。工厂方法模式结构如图所示：<br><img src="https://img-blog.csdnimg.cn/20181122155301312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNjc1OTQwNQ==,size_16,color_FFFFFF,t_70" alt=""><br>在工厂方法模式结构图中包含如下几个角色：</p>
+<p>工厂方法模式提供一个抽象工厂接口来声明抽象工厂方法，而由其子类来具体实现工厂方法，创建具体的产品对象。工厂方法模式结构如图所示：<br><img src="https://img-blog.csdnimg.cn/20181122155301312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNjc1OTQwNQ==,size_16,color_FFFFFF,t_70" alt=""></p>
+<p>在工厂方法模式结构图中包含如下几个角色：</p>
 <ul>
 <li>Product（抽象产品）：它是定义产品的接口，是工厂方法模式所创建对象的超类。</li>
 <li>ConcreteProduct（具体产品）：实现抽象产品接口，某种类型的具体产品由专门的具体工厂创建，具体工厂和具体产品之间一一对应。</li>
@@ -304,7 +305,7 @@ var _hmt = _hmt || [];
     <br>
     
       
-        &copy; 2018 qianliqing
+        &copy; 2019 qianliqing
       
     
   </p>
