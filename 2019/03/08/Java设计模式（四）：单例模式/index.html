@@ -142,7 +142,8 @@ var _hmt = _hmt || [];
     <div class="entry">
       
           <p>参考链接：<a href="https://gof.quanke.name/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F-Singleton%20Pattern.html" target="_blank" rel="noopener">单例模式-Singleton Pattern</a></p>
-<p>对于一个软件系统的某些类而言，我们无须创建多个实例。举个大家都熟知的例子——Windows任务管理器，如图所示：<br><img src="https://img-blog.csdnimg.cn/20181211134458774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNjc1OTQwNQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>通常情况下，无论我们启动任务管理多少次，Windows系统始终只能弹出一个任务管理器窗口。为什么要这样设计呢？我们可以从以下两个方面来分析：其一，如果能弹出多个窗口，且这些窗口的内容完全一致，全部是重复对象，这势必会浪费系统资源，任务管理器需要获取系统运行时的诸多信息，这些信息的获取需要消耗一定的系统资源，包括CPU资源及内存资源等；其二，如果弹出的多个窗口内容不一致，这就意味着在某一瞬间系统资源使用情况和进程、服务等信息存在多个状态，例如任务管理器窗口A显示“CPU使用率”为10%，窗口B显示“CPU使用率”为15%，到底哪个才是真实的呢？</p>
+<p>对于一个软件系统的某些类而言，我们无须创建多个实例。举个大家都熟知的例子——Windows任务管理器。</p>
+<p>通常情况下，无论我们启动任务管理多少次，Windows系统始终只能弹出一个任务管理器窗口。为什么要这样设计呢？我们可以从以下两个方面来分析：其一，如果能弹出多个窗口，且这些窗口的内容完全一致，全部是重复对象，这势必会浪费系统资源，任务管理器需要获取系统运行时的诸多信息，这些信息的获取需要消耗一定的系统资源，包括CPU资源及内存资源等；其二，如果弹出的多个窗口内容不一致，这就意味着在某一瞬间系统资源使用情况和进程、服务等信息存在多个状态，例如任务管理器窗口A显示“CPU使用率”为10%，窗口B显示“CPU使用率”为15%，到底哪个才是真实的呢？</p>
 <h3 id="1-模式概述"><a href="#1-模式概述" class="headerlink" title="1. 模式概述"></a>1. 模式概述</h3><p>定义：确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例，这个类称为单例类，它提供全局访问的方法。</p>
 <a id="more"></a>
 <p>下面我们来模拟实现Windows任务管理器，假设任务管理器的类名为TaskManager在TaskManager类中包含了大量的成员方法，例如构造函数TaskManager()，显示进程的方法displayProcesses()，显示服务的方法displayServices()等，该类的示意代码如下：</p>
